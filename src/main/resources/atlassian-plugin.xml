@@ -1,10 +1,25 @@
-<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+
     <plugin-info>
         <description>${project.description}</description>
         <version>${project.version}</version>
-        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
         <param name="plugin-icon">images/pluginIcon.png</param>
         <param name="plugin-logo">images/pluginLogo.png</param>
     </plugin-info>
+
+    <repository-hook key="update-copyright-hook" name="Update Copyright Hook" class="com.roylenferink.bitbucket.hook.UpdateCopyrightHook">
+        <description key="update-copyright-hook.description">
+            Hook which creates a commit updating the copyright in changed files
+        </description>
+        <scopes>
+            <scope>project</scope>
+            <scope>repository</scope>
+        </scopes>
+    </repository-hook>
+
+    <component key="pullRequestListener" class="com.roylenferink.bitbucket.hook.PullRequestListener" />
 
 </atlassian-plugin>
