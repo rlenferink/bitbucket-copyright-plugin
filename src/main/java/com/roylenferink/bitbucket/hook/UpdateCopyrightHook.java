@@ -15,6 +15,9 @@ public class UpdateCopyrightHook implements PostRepositoryHook<PullRequestMergeH
 
     @Override
     public void postUpdate(@Nonnull PostRepositoryHookContext context, @Nonnull PullRequestMergeHookRequest hookRequest) {
+        if (hookRequest.isDryRun())
+            return; //Don't do anything if a dryrun is being executed
+
         log.info("[{}] {} updated [{}]",
                 hookRequest.getRepository(),
                 hookRequest.getTrigger().getId(),
