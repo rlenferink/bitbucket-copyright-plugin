@@ -10,16 +10,15 @@
         <param name="plugin-logo">images/pluginLogo.png</param>
     </plugin-info>
 
-    <repository-hook key="update-copyright-hook" name="Update Copyright Hook" class="com.roylenferink.bitbucket.hook.UpdateCopyrightHook">
+    <repository-hook key="update-copyright-hook" name="Update Copyright" class="com.roylenferink.bitbucket.hook.UpdateCopyrightHook">
         <description key="update-copyright-hook.description">
-            Hook which creates a commit updating the copyright in changed files
+            Automatically update the copyright year in updated files
         </description>
         <scopes>
             <scope>project</scope>
             <scope>repository</scope>
         </scopes>
+        <icon>images/copyright-hook.png</icon>
     </repository-hook>
-
-    <component key="pullRequestListener" class="com.roylenferink.bitbucket.hook.PullRequestListener" />
 
 </atlassian-plugin>
