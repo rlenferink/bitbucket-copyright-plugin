@@ -21,4 +21,6 @@
         <icon>images/copyright-hook.png</icon>
     </repository-hook>
 
+    <component key="bitbucketLoggerFactory" class="com.roylenferink.bitbucket.logger.PluginLoggerFactory"/>
+
 </atlassian-plugin>
