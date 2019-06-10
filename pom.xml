@@ -134,7 +134,6 @@
                             <instanceId>bitbucket</instanceId>
                             <version>${bitbucket.version}</version>
                             <dataVersion>${bitbucket.data.version}</dataVersion>
-                            <log4jProperties>${project.basedir}/log4j.properties</log4jProperties>
                         </product>
                     </products>
                     <instructions>
