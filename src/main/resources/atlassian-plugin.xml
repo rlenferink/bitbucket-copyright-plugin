@@ -12,7 +12,7 @@
 
     <repository-hook key="update-copyright-hook" name="Update Copyright" class="com.roylenferink.bitbucket.hook.UpdateCopyrightHook">
         <description key="update-copyright-hook.description">
-            Automatically update the copyright year in updated files
+            Automatically update the copyright year in changed files
         </description>
         <scopes>
             <scope>project</scope>
