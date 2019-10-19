@@ -7,8 +7,13 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>atlassian-plugin</packaging>
 
-    <name>bitbucket-copyright-plugin</name>
+    <name>Bitbucket copyright plugin</name>
     <description>A plugin for Bitbucket Server to automatically update the copyright notice</description>
+
+    <organization>
+        <name>Roy Lenferink</name>
+        <url>https://www.roylenferink.com</url>
+    </organization>
 
     <scm>
         <url>https://github.com/rlenferink/bitbucket-copyright-plugin</url>
