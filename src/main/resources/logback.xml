@@ -27,7 +27,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.roylenferink.bitbucket" level="DEBUG">
+    <logger name="com.roylenferink.bitbucket" level="TRACE">
         <appender-ref ref="copyright-plugin" />
         <appender-ref ref="copyright-plugin-debug" />
         <appender-ref ref="copyright-plugin-console" />

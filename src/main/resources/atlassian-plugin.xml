@@ -11,6 +11,7 @@
     </plugin-info>
 
     <repository-hook key="update-copyright-hook" name="Update Copyright" class="com.roylenferink.bitbucket.hook.UpdateCopyrightHook">
+        <icon>images/copyright-hook.png</icon>
         <description key="update-copyright-hook.description">
             Automatically update the copyright year in changed files
         </description>
@@ -18,7 +19,11 @@
             <scope>project</scope>
             <scope>repository</scope>
         </scopes>
-        <icon>images/copyright-hook.png</icon>
+        <config-form name="Update Copyright Hook configuration form" key="update-copyright-hook-configuration-form">
+            <view>com.roylenferink.bitbucket.hook.formContents</view>
+            <directory location="/static/"/>
+        </config-form>
+        <validator>com.roylenferink.bitbucket.CopyrightSettingsValidator</validator>
     </repository-hook>
 
     <component key="bitbucketLoggerFactory" class="com.roylenferink.bitbucket.logger.PluginLoggerFactory"/>

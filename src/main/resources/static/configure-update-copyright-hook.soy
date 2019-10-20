@@ -1,0 +1,27 @@
+{namespace com.roylenferink.bitbucket.hook}
+
+/**
+ * @param config
+ * @param? errors
+ */
+{template .formContents}
+    {literal}
+	Copyright regex
+	{/literal}
+
+	{call aui.form.input}
+		{param id: 'copyright-regex' /}
+        {param type: 'text' /}
+        {param infoMessage: 'Enter the copyright regex used to check the copyright headers, e.g. (Copyright)[^&]*(Roy Lenferink)' /}
+        {param placeholderText: 'Enter the copyright regex' /}
+        {param value: $config['copyright-regex'] /}
+		{param isRequired: true /}
+		{param autocomplete: false /}
+	{/call}
+
+	{call aui.form.fieldError}
+        {param message: $errors ? $errors['copyright-regex'] : '' /}
+        {param extraClasses: 'plugin-point' /}
+	{/call}
+
+{/template}
