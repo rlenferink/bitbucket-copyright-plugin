@@ -76,6 +76,11 @@
             <artifactId>soy-template-renderer-api</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.atlassian.bitbucket.server</groupId>
+            <artifactId>bitbucket-page-objects</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>ch.qos.logback</groupId>

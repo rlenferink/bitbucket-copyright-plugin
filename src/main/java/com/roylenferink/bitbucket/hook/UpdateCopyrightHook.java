@@ -1,8 +1,6 @@
 package com.roylenferink.bitbucket.hook;
 
-import com.atlassian.bitbucket.commit.Changeset;
-import com.atlassian.bitbucket.commit.ChangesetsRequest;
-import com.atlassian.bitbucket.commit.CommitService;
+import com.atlassian.bitbucket.commit.*;
 import com.atlassian.bitbucket.content.*;
 import com.atlassian.bitbucket.hook.repository.PostRepositoryHook;
 import com.atlassian.bitbucket.hook.repository.PostRepositoryHookContext;
@@ -12,6 +10,7 @@ import com.atlassian.bitbucket.util.Page;
 import com.atlassian.bitbucket.util.PageRequestImpl;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 import com.roylenferink.bitbucket.CopyrightSettingsHelper;
+import com.roylenferink.bitbucket.Utils;
 import com.roylenferink.bitbucket.logger.PluginLoggerFactory;
 import org.slf4j.Logger;
 
@@ -85,7 +84,8 @@ public class UpdateCopyrightHook implements PostRepositoryHook<PullRequestMergeH
             for (Change c : changes.getValues()) {
                 if (c.getNodeType() == ContentTreeNode.Type.FILE
                         && c.getType() != ChangeType.DELETE
-                        && !binaryFiles.contains(c.getPath()) ) {
+                        && !binaryFiles.contains(c.getPath())
+                        && !Utils.isBinary(c.getPath().getExtension()) ) {
                     changedFiles.add(c.getPath());
                 }
             }
